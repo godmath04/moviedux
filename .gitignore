@@ -1,23 +1,39 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
+# 📦 Node.js
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+package-lock.json
+
+# 🔧 Editor config
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 🌐 React & Build
+build/
+coverage/
+
+# 📊 SonarQube
+.scannerwork/
+sonar-report.json
+
+# 🔐 Environment files
+.env
+.env.*
+!.env.example
+
+# 📂 PnP
+.pnp/
+.pnp.js
+
+# 🧪 Testing (Jest, etc.)
+jest.config.js
+*.spec.js
+*.test.js
+
+# 🚫 VSCode settings (opcional si compartes config con tu equipo)
+.vscode/

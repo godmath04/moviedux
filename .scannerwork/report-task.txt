@@ -1,0 +1,6 @@
+projectKey=Validacion1
+serverUrl=http://localhost:9000
+serverVersion=25.5.0.107428
+dashboardUrl=http://localhost:9000/dashboard?id=Validacion1
+ceTaskId=9c2f504d-5df9-4821-89e2-904ccb3a91a0
+ceTaskUrl=http://localhost:9000/api/ce/task?id=9c2f504d-5df9-4821-89e2-904ccb3a91a0
