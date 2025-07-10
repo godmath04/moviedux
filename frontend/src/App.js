@@ -5,6 +5,8 @@ import Footer from "./components/Footer";
 import MoviesGrid from "./components/MoviesGrid";
 import Watchlist from "./components/Watchlist";
 import AddMovie from "./components/AddMovie";
+import UserForm from "./components/UserForm";
+import UserList from "./components/UserList";
 
 import { useKeycloak } from "@react-keycloak/web";
 import {
@@ -78,6 +80,16 @@ function App() {
                   <Link to="/admin/add">Añadir Película</Link>
                 </li>
               )}
+              {isAdmin && (
+                <li>
+                  <Link to="/admin/create-user">Crear Usuario</Link>
+                </li>
+              )}
+              {isAdmin && (
+                <li>
+                  <Link to="/admin/users">Ver Usuarios</Link>
+                </li>
+              )}
             </ul>
           </nav>
 
@@ -130,6 +142,28 @@ function App() {
               element={
                 isAdmin ? (
                   <AddMovie onMovieAdded={() => (window.location.href = "/")} />
+                ) : (
+                  <Navigate to="/" replace />
+                )
+              }
+            />
+
+            <Route
+              path="/admin/create-user"
+              element={
+                isAdmin ? (
+                  <UserForm token={keycloak.token} />
+                ) : (
+                  <Navigate to="/" replace />
+                )
+              }
+            />
+
+            <Route
+              path="/admin/users"
+              element={
+                isAdmin ? (
+                  <UserList token={keycloak.token} />
                 ) : (
                   <Navigate to="/" replace />
                 )
