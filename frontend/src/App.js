@@ -7,6 +7,7 @@ import Watchlist from "./components/Watchlist";
 import AddMovie from "./components/AddMovie";
 import UserForm from "./components/UserForm";
 import UserList from "./components/UserList";
+import EncryptedArticle from "./components/EncryptedArticle";
 
 import { useKeycloak } from "@react-keycloak/web";
 import {
@@ -90,6 +91,11 @@ function App() {
                   <Link to="/admin/users">Ver Usuarios</Link>
                 </li>
               )}
+              {isAdmin && (
+                <li>
+                  <Link to="/admin/ver-articulo">Ver Artículo Cifrado</Link>
+                </li>
+              )}
             </ul>
           </nav>
 
@@ -164,6 +170,17 @@ function App() {
               element={
                 isAdmin ? (
                   <UserList token={keycloak.token} />
+                ) : (
+                  <Navigate to="/" replace />
+                )
+              }
+            />
+
+            <Route
+              path="/admin/ver-articulo"
+              element={
+                isAdmin ? (
+                  <EncryptedArticle token={keycloak.token} />
                 ) : (
                   <Navigate to="/" replace />
                 )
