@@ -30,6 +30,7 @@ const verifyAdmin = (req, res, next) => {
 
     next();
   } catch (err) {
+    console.error("Error al verificar token de administrador:", err);
     return res.status(401).json({ error: "Token inválido" });
   }
 };
