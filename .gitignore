@@ -33,7 +33,9 @@ sonar-report.json
 # 🧪 Testing (Jest, etc.)
 jest.config.js
 *.spec.js
-*.test.js
+# Allow test files in src directories
+!src/**/*.test.js
+!backend/tests/**/*.test.js
 
 # 🚫 VSCode settings (opcional si compartes config con tu equipo)
 .vscode/
